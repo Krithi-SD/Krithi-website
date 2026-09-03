@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>HELLO MY LOVE ❤️</title>
+ 
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+
+ <audio id="bgMusic" loop>
+    <source src="love-song.mp3" type="audio/mpeg">
+</audio>
+ 
+    <!-- MAIN GAME SCREEN -->
+ 
+    <div class="game-container">
+ 
+        <div class="top-line">
+            <span>HELLO MY LOVE</span>
+            <span>❤️ 100%</span>
+        </div>
+ 
+ 
+        <div class="game-content">
+ 
+            <div class="pixel-heart">♥</div>
+ 
+            <p class="system-text">
+                SYSTEM MESSAGE
+            </p>
+ 
+            <h1>
+                HELLO MY LOVE...!
+            </h1>
+ 
+            <p class="subtitle">
+                A tiny game made<br>
+                for one special person.
+            </p>
+ 
+ 
+            <div class="menu">
+ 
+                <button onclick="startGame()" class="main-button">
+                    ▶ PLAY OUR STORY
+                </button>
+ 
+                <button onclick="showGift()" class="secondary-button">
+                    🎁 SECRET GIFT
+                </button>
+ 
+            </div>
+ 
+ 
+            <p class="hint">
+                ⚠️ Warning: May contain memories, laughter & love.
+            </p>
+ 
+        </div>
+ 
+ 
+        <div class="bottom-line">
+            <span>PLAYER: HARI</span>
+            <span>♥ MADE WITH LOVE</span>
+        </div>
+ 
+    </div>
+
+<!-- SECRET GIFT POPUP -->
+ 
+<div id="giftPopup" class="gift-popup" style="display: none;">
+ 
+    <div class="gift-content">
+ 
+        <div class="gift-icon">
+            🎁
+        </div>
+ 
+        <p class="gift-small">
+            SECRET UNLOCKED 🤫
+        </p>
+ 
+        
+ 
+        <p class="gift-message">
+            Something special is waiting for you...
+        </p>
+ 
+        <p class="gift-meet">
+            Come and meet me soon. ❤️
+        </p>
+ 
+        <p class="gift-secret">
+            U can think..What is it?
+            <br>
+            <strong>SECRET means SECRET! 😁🤫</strong>
+        </p>
+ 
+        <button class="gift-close" onclick="closeGift()">
+            OKAY... I'LL WAIT ❤️
+        </button>
+ 
+    </div>
+ 
+</div>
+ 
+ 
+<!-- LEVEL 1 -->
+ 
+<div id="level1" class="game-screen hidden">
+ 
+    <div class="level-tag">
+        LEVEL 01
+    </div>
+ 
+    <div class="game-icon">
+        ✨
+    </div>
+ 
+    <h2>The First Spark</h2>
+ 
+    <p class="question">
+        Where did our story secretly begin?
+    </p>
+ 
+    <div class="answers">
+ 
+        <button onclick="wrongAnswer(this)">
+            A. A Coffee Shop ☕
+        </button>
+ 
+        <button onclick="correctAnswer(this)">
+            B. 4W Technologies ❤️
+        </button>
+ 
+        <button onclick="wrongAnswer(this)">
+            C. A Movie Theatre 🎬
+        </button>
+ 
+    </div>
+ 
+    <p id="game-message"></p>
+ 
+</div>
+ 
+ 
+<!-- LEVEL 2 -->
+ 
+<div id="level2" class="game-screen hidden">
+ 
+    <div class="level-tag">
+        LEVEL 02
+    </div>
+ 
+    <div class="game-icon">
+        💍
+    </div>
+ 
+    <h2>Unlock The Proposal</h2>
+ 
+    <p class="question">
+        Some memories have to be unlocked...
+    </p>
+ 
+    <p class="instruction">
+        Find them in the right order ❤️
+    </p>
+ 
+    <div class="memory-box">
+ 
+        <button id="memory1" onclick="openMemory(1)">
+            🔒 THE CALL
+        </button>
+ 
+        <button id="memory2" onclick="openMemory(2)">
+            🔒 THE MEET
+        </button>
+ 
+        <button id="memory3" onclick="openMemory(3)">
+            🔒 THE WAIT
+        </button>
+ 
+    </div>
+ 
+    <p id="memory-message"></p>
+ 
+</div> 
+ 
+</div>
+
+
+ 
+ <!-- PROPOSAL REVEAL -->
+ 
+<div id="proposal" class="proposal-screen">
+ 
+    <div class="proposal-content">
+ 
+        <div class="proposal-small">
+            MEMORY UNLOCKED
+        </div>
+ 
+        <div class="proposal-heart">
+            💍
+        </div>
+ 
+        <h2>06 JULY 2025</h2>
+ 
+        <p class="proposal-text">
+            The day you asked me to be yours... ❤️
+        </p>
+ 
+        <p class="proposal-subtext">
+            And somehow, that one question<br>
+            changed everything.
+        </p>
+ 
+        <button class="continue-button" onclick="continueFromProposal()">
+            CONTINUE ❤️
+        </button>
+ 
+    </div>
+ 
+</div>
+
+<!-- LEVEL 3 — THE FIRST RIDE -->
+ 
+<div id="level3" class="game-screen" style="display: none;">
+ 
+    <div class="level-tag">
+        LEVEL 03
+    </div>
+ 
+    <div class="game-icon">
+        🏍️
+    </div>
+ 
+    <h2>The First Ride</h2>
+ 
+    <p class="question">
+        First gear. No control. 😂
+    </p>
+ 
+    <p class="instruction">
+        Sorry babe to make u fall! ❤️
+    </p>
+ 
+    <div class="ride-game">
+ 
+        <div class="road">
+            <div id="bike">🏍️</div>
+        </div>
+ 
+        <div class="ride-buttons">
+ 
+            <button onclick="moveBike('left')">
+                ◀ LEFT
+            </button>
+ 
+            <button onclick="moveBike('right')">
+                RIGHT ▶
+            </button>
+ 
+        </div>
+ 
+    </div>
+ 
+    <p id="ride-message"></p>
+ 
+</div>
+
+<!-- LEVEL 4 — THE LAST MESSAGE -->
+ 
+<div id="level4" class="game-screen" style="display: none;">
+ 
+    <div class="level-tag">
+        LEVEL 04
+    </div>
+ 
+    <div class="game-icon">
+        💌
+    </div>
+ 
+    <h2>The Last Message</h2>
+ 
+    <div class="letter-box">
+ 
+        <p>Hari... ❤️</p>
+ 
+        <p>
+            Thanks for the Arrival...!❤️
+        </p>
+ 
+        <p>
+            This may make u feel cringyy..😂 But u really turned
+            me to create this beautiful cringe things....
+           
+        </p>
+ 
+        <p class="highlight">
+          You Just recreate my new version. ❤️
+        </p>
+ 
+        <p>
+             This careless girl preparing more things very carefully for our future...!❤️
+           
+        </p>
+ 
+    
+ 
+        <p class="highlight">
+            I want to be yours. ♥️
+        </p>
+ 
+  
+ 
+        <p class="signature">
+            — Yours, always. ❤️
+        </p>
+ 
+    </div>
+ 
+    <button class="continue-button" onclick="showBirthday()">
+        ONE LAST THING... ❤️
+    </button>
+ 
+</div>
+
+<!-- FINAL BIRTHDAY SCREEN -->
+ 
+<div id="birthday" class="birthday-screen" style="display: none;">
+ 
+    <div class="birthday-content">
+ 
+        <div class="birthday-small">
+            SYSTEM MESSAGE
+        </div>
+ 
+        <div class="birthday-cake">
+            🎂
+        </div>
+ 
+        <h1>
+            HAPPIEST BIRTHDAY
+        </h1>
+ 
+        <h2>
+            MY MAN ❤️
+        </h2>
+ 
+        <p class="birthday-message">
+            You are my favourite part of my story.
+        </p>
+ 
+        <p class="birthday-message">
+            Thanks to be with me... ✨
+        </p>
+ 
+        <div class="birthday-heart">
+            ♥
+        </div>
+ 
+        <p class="birthday-final">
+            Happy Birthday, my love. ❤️
+        </p>
+ 
+    </div>
+ 
+</div>
+ 
+ 
+ 
+ 
+    <!-- JavaScript -->
+ 
+    <script src="script.js"></script>
+ 
+</body>
+ 
+</html>
+ 

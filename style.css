@@ -1,0 +1,1428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+ 
+/* =========================
+   BODY
+   ========================= */
+ 
+body {
+    min-height: 100vh;
+    background: #090711;
+    color: white;
+    font-family: "Courier New", monospace;
+    overflow: hidden;
+}
+ 
+ 
+/* =========================
+   MAIN SCREEN
+   ========================= */
+ 
+.game-container {
+    min-height: 100vh;
+    position: relative;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ 
+    padding: 25px;
+ 
+    background: radial-gradient(
+        circle at center,
+        #32152f 0%,
+        #120b1c 45%,
+        #090711 100%
+    );
+}
+ 
+ 
+/* =========================
+   TOP & BOTTOM HUD
+   ========================= */
+ 
+.top-line,
+.bottom-line {
+    display: flex;
+    justify-content: space-between;
+ 
+    font-size: 12px;
+    letter-spacing: 2px;
+ 
+    color: #d99ac3;
+    
+}
+ 
+ 
+/* =========================
+   MAIN CONTENT
+   ========================= */
+ 
+.game-content {
+    text-align: center;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    animation: appear 1.5s ease;
+}
+ 
+ 
+/* =========================
+   HEART
+   ========================= */
+ 
+.pixel-heart {
+    font-size: 70px;
+ 
+    color: #ff6fae;
+ 
+    text-shadow:
+        0 0 10px #ff6fae,
+        0 0 30px #ff6fae,
+        0 0 60px #ff6fae;
+ 
+    animation: heartbeat 1.5s infinite;
+}
+ 
+ 
+/* =========================
+   MAIN TITLE
+   ========================= */
+ 
+.system-text {
+    margin-top: 20px;
+ 
+    font-size: 11px;
+    letter-spacing: 4px;
+ 
+    /*color: #a67896;*/
+    color: #d8a9c1;
+}
+ 
+h1 {
+    margin-top: 10px;
+ 
+    font-size: clamp(45px, 12vw, 80px);
+ 
+    letter-spacing: 8px;
+ 
+    color: #ffffff;
+ 
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 30px #ff6fae;
+}
+ 
+ 
+/* =========================
+   SUBTITLE
+   ========================= */
+ 
+.subtitle {
+    margin-top: 20px;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 18px;
+ 
+    line-height: 1.7;
+ 
+    color: #e9cbdc;
+}
+ 
+ 
+/* =========================
+   MAIN MENU
+   ========================= */
+ 
+.menu {
+    width: 100%;
+    max-width: 330px;
+ 
+    margin-top: 40px;
+ 
+    display: flex;
+    flex-direction: column;
+ 
+    gap: 15px;
+}
+ 
+ 
+/* =========================
+   ALL BUTTONS
+   ========================= */
+ 
+button {
+    width: 100%;
+ 
+    padding: 16px;
+ 
+    border-radius: 10px;
+ 
+    font-family: "Courier New", monospace;
+ 
+    font-size: 14px;
+ 
+    letter-spacing: 1px;
+ 
+    cursor: pointer;
+ 
+    transition: all 0.3s ease;
+}
+ 
+ 
+/* Play button */
+ 
+.main-button {
+    border: 1px solid #ff6fae;
+ 
+    background: #ff6fae;
+ 
+    color: #180b16;
+ 
+    box-shadow:
+        0 0 15px rgba(255,111,174,0.5);
+}
+ 
+.main-button:hover {
+    transform: translateY(-3px);
+ 
+    box-shadow:
+        0 0 30px rgba(255,111,174,0.8);
+}
+ 
+ 
+/* Secret gift button */
+ 
+.secondary-button {
+    border: 1px solid #754d70;
+ 
+    background: rgba(255,255,255,0.05);
+ 
+    color: #e9cbdc;
+}
+ 
+.secondary-button:hover {
+    border-color: #ff6fae;
+ 
+    color: white;
+ 
+    transform: translateY(-3px);
+}
+ 
+ 
+/* Warning */
+ 
+.hint {
+    margin-top: 30px;
+ 
+    font-size: 10px;
+ 
+    color: #806a7c;
+ 
+    letter-spacing: 1px;
+}
+ 
+ 
+/* ==================================================
+   LEVEL SCREENS
+   ================================================== */
+ 
+.game-screen {
+    min-height: 100vh;
+ 
+    width: 100%;
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    justify-content: center;
+ 
+    align-items: center;
+ 
+    text-align: center;
+ 
+    padding: 40px 20px;
+ 
+    background: radial-gradient(
+        circle at center,
+        #35152f 0%,
+        #120b1c 55%,
+        #090711 100%
+    );
+ 
+    animation: appear 0.8s ease;
+}
+ 
+ 
+/* VERY IMPORTANT */
+ 
+.game-screen[style*="display: none"] {
+    display: none;
+}
+ 
+ 
+/* Level number */
+ 
+.level-tag {
+    margin-bottom: 20px;
+ 
+    font-size: 12px;
+ 
+    letter-spacing: 5px;
+ 
+    color: #d99ac3;
+}
+ 
+ 
+/* Icon */
+ 
+.game-icon {
+    font-size: 55px;
+ 
+    margin-bottom: 15px;
+ 
+    animation: heartbeat 1.5s infinite;
+}
+ 
+ 
+/* Level heading */
+ 
+.game-screen h2 {
+    margin-bottom: 15px;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 42px;
+ 
+    color: white;
+ 
+    text-shadow:
+        0 0 20px rgba(255,111,174,0.6);
+}
+ 
+ 
+/* Question */
+ 
+.game-screen .question {
+    margin-bottom: 10px;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 18px;
+ 
+    color: #e9cbdc;
+}
+ 
+ 
+/* =========================
+   LEVEL 1
+   ========================= */
+ 
+.answers {
+    width: 100%;
+ 
+    max-width: 380px;
+ 
+    margin-top: 25px;
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    gap: 14px;
+}
+ 
+ 
+.answers button {
+    width: 100%;
+ 
+    padding: 16px;
+ 
+    border: 1px solid #754d70;
+ 
+    border-radius: 12px;
+ 
+    background: rgba(255,255,255,0.06);
+ 
+    color: #f5dce9;
+}
+ 
+ 
+.answers button:hover {
+    border-color: #ff6fae;
+ 
+    transform: scale(1.03);
+ 
+    box-shadow:
+        0 0 20px rgba(255,111,174,0.3);
+}
+ 
+ 
+#game-message {
+    min-height: 25px;
+ 
+    margin-top: 25px;
+ 
+    color: #ffb6d9;
+ 
+    font-size: 16px;
+}
+ 
+ 
+/* =========================
+   LEVEL 2
+   ========================= */
+ 
+.instruction {
+    margin-bottom: 25px;
+ 
+    font-size: 13px;
+ 
+    color: #a67896;
+}
+ 
+ 
+.memory-box {
+    width: 100%;
+ 
+    max-width: 380px;
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    gap: 14px;
+}
+ 
+ 
+.memory-box button {
+    width: 100%;
+ 
+    padding: 18px;
+ 
+    border: 1px solid #754d70;
+ 
+    border-radius: 12px;
+ 
+    background: rgba(255,255,255,0.06);
+ 
+    color: #e9cbdc;
+}
+ 
+ 
+.memory-box button:hover {
+    border-color: #ff6fae;
+ 
+    transform: scale(1.03);
+ 
+    box-shadow:
+        0 0 20px rgba(255,111,174,0.3);
+}
+ 
+ 
+#memory-message {
+    min-height: 25px;
+ 
+    margin-top: 25px;
+ 
+    color: #ffb6d9;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 16px;
+}
+ 
+ 
+/* =========================
+   ANIMATIONS
+   ========================= */
+ 
+@keyframes heartbeat {
+ 
+    0%, 100% {
+        transform: scale(1);
+    }
+ 
+    50% {
+        transform: scale(1.18);
+    }
+}
+ 
+ 
+@keyframes appear {
+ 
+    from {
+        opacity: 0;
+ 
+        transform: translateY(30px);
+    }
+ 
+    to {
+        opacity: 1;
+ 
+        transform: translateY(0);
+    }
+}
+ 
+ 
+/* =========================
+   MOBILE
+   ========================= */
+ 
+@media (max-width: 600px) {
+ 
+    .game-container {
+        padding: 18px;
+    }
+ 
+    .top-line,
+    .bottom-line {
+        font-size: 9px;
+    }
+ 
+    .pixel-heart {
+        font-size: 60px;
+    }
+ 
+    .subtitle {
+        font-size: 16px;
+    }
+ 
+    .game-screen h2 {
+        font-size: 32px;
+    }
+ 
+    .game-screen .question {
+        font-size: 16px;
+    }
+ 
+    .answers,
+    .memory-box {
+        max-width: 350px;
+    }
+}
+
+    /* =========================
+   PROPOSAL REVEAL
+   ========================= */
+ 
+.proposal-screen {
+    position: fixed;
+ 
+    inset: 0;
+ 
+    z-index: 1000;
+ 
+    display: none;
+ 
+    justify-content: center;
+ 
+    align-items: center;
+ 
+    text-align: center;
+ 
+    padding: 25px;
+ 
+    background:
+        radial-gradient(
+            circle at center,
+            #35152f 0%,
+            #120b1c 55%,
+            #05040a 100%
+        );
+}
+ 
+ 
+.proposal-content {
+    max-width: 500px;
+ 
+    animation: proposalAppear 1.5s ease;
+}
+ 
+ 
+.proposal-small {
+    font-size: 11px;
+ 
+    letter-spacing: 5px;
+ 
+    color: #d99ac3;
+ 
+    margin-bottom: 30px;
+}
+ 
+ 
+.proposal-heart {
+    font-size: 75px;
+ 
+    margin-bottom: 25px;
+ 
+    animation: heartbeat 1.5s infinite;
+ 
+    filter:
+        drop-shadow(0 0 15px #ff6fae)
+        drop-shadow(0 0 35px #ff6fae);
+}
+ 
+ 
+.proposal-content h2 {
+    font-family: Georgia, serif;
+ 
+    font-size: 38px;
+ 
+    letter-spacing: 4px;
+ 
+    color: white;
+ 
+    text-shadow:
+        0 0 20px rgba(255,111,174,0.7);
+ 
+    margin-bottom: 25px;
+}
+ 
+ 
+.proposal-text {
+    font-family: Georgia, serif;
+ 
+    font-size: 20px;
+ 
+    line-height: 1.6;
+ 
+    color: #f2d7e5;
+ 
+    margin-bottom: 15px;
+}
+ 
+ 
+.proposal-subtext {
+    font-family: Georgia, serif;
+ 
+    font-size: 15px;
+ 
+    line-height: 1.8;
+ 
+    color: #a67896;
+ 
+    margin-bottom: 35px;
+}
+ 
+ 
+.continue-button {
+    max-width: 250px;
+ 
+    border: 1px solid #ff6fae;
+ 
+    background: #ff6fae;
+ 
+    color: #180b16;
+ 
+    box-shadow:
+        0 0 20px rgba(255,111,174,0.5);
+}
+ 
+ 
+.continue-button:hover {
+    transform: translateY(-3px);
+ 
+    box-shadow:
+        0 0 35px rgba(255,111,174,0.8);
+}
+ 
+ 
+@keyframes proposalAppear {
+ 
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   PROPOSAL MEMORY SCREEN
+   ========================= */
+ 
+.proposal-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+ 
+    width: 100%;
+    height: 100vh;
+ 
+    z-index: 9999;
+ 
+    display: none;
+ 
+    justify-content: center;
+    align-items: center;
+ 
+    text-align: center;
+ 
+    padding: 25px;
+ 
+    background: radial-gradient(
+        circle at center,
+        #35152f 0%,
+        #180d1d 50%,
+        #07050b 100%
+    );
+}
+ 
+ 
+.proposal-content {
+    width: 100%;
+    max-width: 500px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    animation: proposalAppear 1.2s ease;
+}
+ 
+ 
+.proposal-small {
+    font-size: 11px;
+ 
+    letter-spacing: 5px;
+ 
+    color: #d99ac3;
+ 
+    margin-bottom: 25px;
+}
+ 
+ 
+.proposal-heart {
+    font-size: 75px;
+ 
+    margin-bottom: 25px;
+ 
+    filter:
+        drop-shadow(0 0 15px #ff6fae)
+        drop-shadow(0 0 35px #ff6fae);
+ 
+    animation: heartbeat 1.5s infinite;
+}
+ 
+ 
+.proposal-content h2 {
+    margin: 0 0 25px 0;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 38px;
+ 
+    letter-spacing: 4px;
+ 
+    color: white;
+ 
+    text-shadow:
+        0 0 15px rgba(255,111,174,0.7);
+}
+ 
+ 
+.proposal-text {
+    margin-bottom: 15px;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 20px;
+ 
+    line-height: 1.6;
+ 
+    color: #f2d7e5;
+}
+ 
+ 
+.proposal-subtext {
+    margin-bottom: 35px;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 15px;
+ 
+    line-height: 1.8;
+ 
+    color: #a67896;
+}
+ 
+ 
+.continue-button {
+    width: 100%;
+    max-width: 250px;
+ 
+    padding: 15px 20px;
+ 
+    border: 1px solid #ff6fae;
+ 
+    border-radius: 10px;
+ 
+    background: #ff6fae;
+ 
+    color: #180b16;
+ 
+    font-family: "Courier New", monospace;
+ 
+    font-size: 14px;
+ 
+    cursor: pointer;
+ 
+    box-shadow:
+        0 0 20px rgba(255,111,174,0.5);
+ 
+    transition: 0.3s;
+}
+ 
+ 
+.continue-button:hover {
+    transform: translateY(-3px);
+ 
+    box-shadow:
+        0 0 35px rgba(255,111,174,0.8);
+}
+ 
+ 
+@keyframes proposalAppear {
+ 
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+ 
+ 
+/* Mobile */
+ 
+@media (max-width: 600px) {
+ 
+    .proposal-content h2 {
+        font-size: 30px;
+    }
+ 
+    .proposal-heart {
+        font-size: 60px;
+    }
+ 
+    .proposal-text {
+        font-size: 17px;
+    }
+ 
+    .proposal-subtext {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   LEVEL 3 — BIKE GAME
+   ========================= */
+ 
+.ride-game {
+    width: 100%;
+    max-width: 420px;
+}
+ 
+.road {
+    position: relative;
+ 
+    width: 100%;
+    height: 180px;
+ 
+    margin: 20px 0;
+ 
+    border-radius: 20px;
+ 
+    overflow: auto;
+ 
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #25202b 0px,
+            #25202b 30px,
+            #332c38 31px,
+            #332c38 60px
+        );
+ 
+    border: 2px solid #754d70;
+ 
+    box-shadow:
+        0 0 25px rgba(255,111,174,0.2);
+}
+ 
+.road::before {
+    content: "";
+ 
+    position: absolute;
+ 
+    left: 50%;
+ 
+    top: 0;
+ 
+    width: 4px;
+ 
+    height: 100%;
+ 
+    transform: translateX(-50%);
+ 
+    border-left: 3px dashed rgba(255,255,255,0.25);
+}
+ 
+#bike {
+    position: absolute;
+ 
+    left: 50%;
+ 
+    bottom: 25px;
+ 
+    transform: translateX(-50%);
+ 
+    font-size: 45px;
+ 
+    transition: left 0.35s ease;
+ 
+    z-index: 2;
+ 
+    filter:
+        drop-shadow(0 0 8px #ff6fae);
+}
+ 
+.ride-buttons {
+    display: flex;
+ 
+    gap: 15px;
+ 
+    width: 100%;
+}
+ 
+.ride-buttons button {
+    flex: 1;
+ 
+    border: 1px solid #754d70;
+ 
+    background: rgba(255,255,255,0.06);
+ 
+    color: #e9cbdc;
+}
+ 
+.ride-buttons button:hover {
+    border-color: #ff6fae;
+ 
+    transform: translateY(-3px);
+ 
+    box-shadow:
+        0 0 15px rgba(255,111,174,0.3);
+}
+ 
+#ride-message {
+    min-height: 25px;
+ 
+    margin-top: 20px;
+ 
+    color: #ffb6d9;
+ 
+    font-family: Georgia, serif;
+ 
+    font-size: 16px;
+}
+
+/* =========================
+   LEVEL 4 — LOVE LETTER
+   ========================= */
+ 
+#level4 {
+    padding: 30px 20px;
+    overflow-y: auto;
+}
+ 
+.letter-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 30px;
+    padding: 25px;
+    
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 111, 174, 0.35);
+    border-radius: 15px;
+    
+    box-shadow:
+        0 0 20px rgba(255, 111, 174, 0.12),
+        inset 0 0 20px rgba(255, 111, 174, 0.03);
+        
+    font-family: Georgia, serif;
+    color: #f2d7e5;
+    font-size: 16px;
+    line-height: 1.8;
+    
+    animation: letterAppear 1.2s ease;
+}
+ 
+.letter-box p {
+    margin: 0 0 18px;
+}
+ 
+.letter-box p:first-child {
+    font-size: 20px;
+    color: #ffb6d9;
+}
+ 
+.letter-box .highlight {
+    font-size: 22px;
+    color: #ff6fae;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(255, 111, 174, 0.6);
+}
+ 
+.letter-box .signature {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-align: right;
+    color: #ffb6d9;
+    font-style: italic;
+}
+ 
+@keyframes letterAppear {
+ 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ 
+}
+ 
+ 
+/* MOBILE */
+ 
+@media (max-width: 600px) {
+ 
+    #level4 {
+        padding: 25px 15px;
+    }
+ 
+    .letter-box {
+        padding: 20px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+ 
+    .letter-box .highlight {
+        font-size: 20px;
+    }
+ 
+}
+ 
+
+/* =========================
+   FINAL BIRTHDAY SCREEN
+   ========================= */
+ 
+.birthday-screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    text-align: center;
+    padding: 25px;
+ 
+    background:
+        radial-gradient(circle at center,
+        #4a173f 0%,
+        #241027 45%,
+        #08050c 100%);
+ 
+    overflow: hidden;
+}
+ 
+.birthday-content {
+    width: 100%;
+    max-width: 600px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    animation: birthdayAppear 1.5s ease;
+}
+ 
+.birthday-small {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #d99ac3;
+    margin-bottom: 25px;
+}
+ 
+.birthday-cake {
+    font-size: 75px;
+    margin-bottom: 20px;
+ 
+    animation: cakeFloat 2s ease-in-out infinite;
+ 
+    filter:
+        drop-shadow(0 0 15px rgba(255, 111, 174, 0.7))
+        drop-shadow(0 0 35px rgba(255, 111, 174, 0.4));
+}
+ 
+.birthday-content h1 {
+    margin: 0;
+ 
+    font-family: Georgia, serif;
+    font-size: 42px;
+    letter-spacing: 5px;
+ 
+    color: white;
+ 
+    text-shadow:
+        0 0 10px rgba(255, 111, 174, 0.8),
+        0 0 30px rgba(255, 111, 174, 0.5);
+}
+ 
+.birthday-content h2 {
+    margin: 10px 0 30px;
+ 
+    font-family: Georgia, serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+ 
+    color: #ff6fae;
+ 
+    text-shadow:
+        0 0 15px rgba(255, 111, 174, 0.8);
+}
+ 
+.birthday-message {
+    margin: 5px 0;
+ 
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+ 
+    color: #f2d7e5;
+}
+ 
+.birthday-heart {
+    margin: 25px 0 15px;
+ 
+    font-size: 45px;
+    color: #ff6fae;
+ 
+    animation: birthdayHeartbeat 1.5s infinite;
+ 
+    text-shadow:
+        0 0 15px #ff6fae,
+        0 0 35px rgba(255, 111, 174, 0.7);
+}
+ 
+.birthday-final {
+    margin: 0;
+ 
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+ 
+    color: #ffb6d9;
+}
+ 
+ 
+/* ANIMATIONS */
+ 
+@keyframes birthdayAppear {
+ 
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+ 
+@keyframes cakeFloat {
+ 
+    0%, 100% {
+        transform: translateY(0);
+    }
+ 
+    50% {
+        transform: translateY(-10px);
+    }
+}
+ 
+@keyframes birthdayHeartbeat {
+ 
+    0%, 100% {
+        transform: scale(1);
+    }
+ 
+    50% {
+        transform: scale(1.2);
+    }
+}
+ 
+ 
+/* MOBILE */
+ 
+@media (max-width: 600px) {
+ 
+    .birthday-screen {
+        padding: 20px;
+    }
+ 
+    .birthday-cake {
+        font-size: 60px;
+    }
+ 
+    .birthday-content h1 {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+ 
+    .birthday-content h2 {
+        font-size: 27px;
+        letter-spacing: 3px;
+    }
+ 
+    .birthday-message {
+        font-size: 16px;
+    }
+ 
+    .birthday-final {
+        font-size: 18px;
+    }
+}
+ 
+/* =========================
+   SECRET GIFT POPUP
+   ========================= */
+ 
+.gift-popup {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+ 
+    z-index: 20000;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    padding: 25px;
+ 
+    background: rgba(7, 5, 11, 0.92);
+    backdrop-filter: blur(8px);
+}
+ 
+.gift-content {
+    width: 100%;
+    max-width: 430px;
+ 
+    padding: 35px 25px;
+ 
+    text-align: center;
+ 
+    background:
+        radial-gradient(
+            circle at center,
+            #35152f 0%,
+            #180d1d 70%
+        );
+ 
+    border: 1px solid rgba(255, 111, 174, 0.5);
+    border-radius: 20px;
+ 
+    box-shadow:
+        0 0 25px rgba(255, 111, 174, 0.25),
+        0 0 70px rgba(255, 111, 174, 0.12);
+ 
+    animation: giftAppear 0.7s ease;
+}
+ 
+.gift-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+ 
+    animation: giftFloat 2s ease-in-out infinite;
+ 
+    filter:
+        drop-shadow(0 0 12px rgba(255, 111, 174, 0.7));
+}
+ 
+.gift-small {
+    margin-bottom: 18px;
+ 
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+ 
+    color: #d99ac3;
+}
+ 
+.gift-content h2 {
+    margin: 0 0 20px;
+ 
+    font-family: Georgia, serif;
+    font-size: 28px;
+ 
+    color: #ffb6d9;
+ 
+    text-shadow:
+        0 0 15px rgba(255, 111, 174, 0.6);
+}
+ 
+.gift-message {
+    margin: 10px 0;
+ 
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+ 
+    color: #f2d7e5;
+}
+ 
+.gift-meet {
+    margin: 20px 0;
+ 
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+ 
+    color: #ff6fae;
+ 
+    text-shadow:
+        0 0 12px rgba(255, 111, 174, 0.7);
+}
+ 
+.gift-secret {
+    margin: 20px 0 30px;
+ 
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.8;
+ 
+    color: #a67896;
+}
+ 
+.gift-secret strong {
+    color: #ffb6d9;
+}
+ 
+.gift-close {
+    width: 100%;
+    max-width: 280px;
+ 
+    padding: 14px 20px;
+ 
+    border: 1px solid #ff6fae;
+    border-radius: 10px;
+ 
+    background: #ff6fae;
+    color: #180b16;
+ 
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+ 
+    cursor: pointer;
+ 
+    box-shadow:
+        0 0 20px rgba(255, 111, 174, 0.4);
+ 
+    transition: 0.3s;
+}
+ 
+.gift-close:hover {
+    transform: translateY(-3px);
+ 
+    box-shadow:
+        0 0 35px rgba(255, 111, 174, 0.8);
+}
+ 
+ 
+/* ANIMATIONS */
+ 
+@keyframes giftAppear {
+ 
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+ 
+@keyframes giftFloat {
+ 
+    0%, 100% {
+        transform: translateY(0);
+    }
+ 
+    50% {
+        transform: translateY(-8px);
+    }
+}
+ 
+ 
+/* MOBILE */
+ 
+@media (max-width: 600px) {
+ 
+    .gift-content {
+        padding: 30px 20px;
+    }
+ 
+    .gift-icon {
+        font-size: 55px;
+    }
+ 
+    .gift-content h2 {
+        font-size: 25px;
+    }
+ 
+    .gift-message {
+        font-size: 16px;
+    }
+ 
+    .gift-meet {
+        font-size: 18px;
+    }
+ 
+}
+
+
+ 
+ 
+ 
+ 
+
+ 
